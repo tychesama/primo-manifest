@@ -222,11 +222,11 @@ function drawBackground(character) {
 }
 
 function drawSoftPortrait(image, character) {
-  const frameW = 784;
-  const frameH = 984;
-  const frameX = 58;
-  const frameY = 72;
-  const zoom = 1.24;
+  const frameW = 792;
+  const frameH = 1120;
+  const frameX = 54;
+  const frameY = 64;
+  const zoom = 1.2;
   const scale = Math.max(frameW / image.width, frameH / image.height) * zoom;
   const sourceW = frameW / scale;
   const sourceH = frameH / scale;
@@ -262,15 +262,15 @@ function drawMagicOverlay(character) {
     drawDiamond(124 + i * 92, 132 + (i % 2) * 30, 8 + (i % 3) * 3);
   }
   ctx.fillStyle = character.colors[0];
-  drawDiamond(104, 980, 10);
+  drawDiamond(104, 1110, 10);
   drawDiamond(790, 178, 10);
   ctx.globalAlpha = 1;
 }
 
 function drawCaption(character) {
-  const labelX = 114;
-  const labelY = 832;
-  const labelW = 672;
+  const labelX = 112;
+  const labelY = 988;
+  const labelW = 676;
   const labelH = 112;
 
   ctx.save();
@@ -300,17 +300,17 @@ function drawReferenceDecor() {
   drawFlower(166, 90, 0.86, 0.48);
   drawFlower(784, 82, 0.9, -0.34);
   drawFlower(836, 142, 0.72, 0.62);
-  drawFlower(102, 980, 0.78, 0.18);
+  drawFlower(102, 1124, 0.78, 0.18);
 
   drawStem(110, 132, 66, 58, -0.8);
   drawStem(790, 140, 64, 74, 0.9);
-  drawStem(240, 1040, 72, 46, -0.28);
-  drawStem(688, 1052, 80, 54, 0.42);
+  drawStem(240, 1190, 72, 46, -0.28);
+  drawStem(688, 1202, 80, 54, 0.42);
 
   drawLeaf(665, 44, 34, 18, "#7bb5a1", -0.24);
   drawLeaf(718, 34, 42, 20, "#7bb5a1", 0.34);
-  drawLeaf(758, 1062, 38, 18, "#7bb5a1", -0.44);
-  drawLeaf(88, 1040, 34, 16, "#f1b866", 0.52);
+  drawLeaf(758, 1216, 38, 18, "#7bb5a1", -0.44);
+  drawLeaf(88, 1194, 34, 16, "#f1b866", 0.52);
 }
 
 function drawFlower(x, y, scale, rotation) {

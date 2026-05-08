@@ -12,6 +12,7 @@
   --violet: #8d65ff;
   --deep: #100c2d;
   --glow: 0 24px 80px rgba(0, 0, 0, 0.3);
+  --section-width: clamp(360px, 30vw, 470px);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
@@ -60,7 +61,7 @@ select {
 }
 
 .app-shell {
-  width: min(1320px, calc(100% - 32px));
+  width: min(1500px, calc(100% - 40px));
   margin: 0 auto;
 }
 
@@ -87,15 +88,15 @@ select {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding: 20px 0;
+  padding: 18px 0;
 }
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 320px;
+  grid-template-columns: minmax(0, 1fr) 360px;
   align-items: center;
-  gap: 20px;
-  padding-bottom: 16px;
+  gap: 28px;
+  padding-bottom: 18px;
 }
 
 .eyebrow,
@@ -116,7 +117,7 @@ p {
 
 h1 {
   margin-bottom: 0;
-  font-size: clamp(3rem, 8vw, 6.4rem);
+  font-size: clamp(4.4rem, 6.8vw, 7.4rem);
   line-height: 0.9;
   letter-spacing: 0;
   text-shadow: 0 0 34px rgba(255, 214, 107, 0.42);
@@ -136,7 +137,7 @@ h1 {
 }
 
 .hero-copy p:last-child {
-  max-width: 620px;
+  max-width: 720px;
   color: var(--muted);
   font-size: 1rem;
   line-height: 1.5;
@@ -145,7 +146,7 @@ h1 {
 
 .fortune-card {
   position: relative;
-  min-height: 168px;
+  min-height: 150px;
   padding: 22px;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -204,7 +205,7 @@ h1 {
 
 .workspace {
   display: grid;
-  grid-template-columns: 318px 904px;
+  grid-template-columns: repeat(3, var(--section-width));
   gap: 24px;
   align-items: stretch;
   justify-content: center;
@@ -233,6 +234,7 @@ h1 {
   position: sticky;
   top: 20px;
   overflow: hidden;
+  aspect-ratio: 18 / 25;
 }
 
 .controls::after {
@@ -365,18 +367,14 @@ option {
 }
 
 .result-panel {
-  display: grid;
-  grid-template-columns: 440px 440px;
-  gap: 24px;
-  align-items: stretch;
-  min-height: 0;
+  display: contents;
 }
 
 .portrait-frame {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 9 / 11;
-  width: 440px;
+  width: var(--section-width);
+  aspect-ratio: 18 / 25;
   background:
     linear-gradient(135deg, rgba(120, 241, 255, 0.2), transparent 40%),
     linear-gradient(315deg, rgba(255, 123, 189, 0.2), transparent 44%),
@@ -386,8 +384,8 @@ option {
 canvas {
   display: block;
   width: 100%;
-  height: auto;
-  aspect-ratio: 9 / 11;
+  height: 100%;
+  object-fit: cover;
 }
 
 .empty-state,
@@ -457,6 +455,7 @@ canvas {
   flex-direction: column;
   gap: 18px;
   padding: 24px;
+  aspect-ratio: 18 / 25;
   background:
     radial-gradient(circle at 84% 18%, rgba(255, 214, 107, 0.12), transparent 12rem),
     radial-gradient(circle at 12% 88%, rgba(120, 241, 255, 0.1), transparent 11rem),
@@ -509,27 +508,19 @@ canvas {
 
   .portrait-frame {
     justify-self: center;
-    max-width: 440px;
+    max-width: var(--section-width);
     min-height: 0;
   }
 
   .controls,
   .reading-card {
-    height: 100%;
+    height: auto;
   }
 }
 
-@media (max-width: 1160px) and (min-width: 921px) {
-  .workspace {
-    grid-template-columns: 280px 742px;
-  }
-
-  .result-panel {
-    grid-template-columns: 360px 360px;
-  }
-
-  .portrait-frame {
-    width: 360px;
+@media (max-width: 1240px) and (min-width: 921px) {
+  :root {
+    --section-width: clamp(300px, 30vw, 370px);
   }
 }
 
@@ -544,15 +535,27 @@ canvas {
     position: static;
   }
 
+  .result-panel {
+    display: grid;
+    gap: 22px;
+  }
+
   .portrait-frame {
     width: min(100%, 390px);
+    height: auto;
+    aspect-ratio: 9 / 11;
     justify-self: center;
+  }
+
+  canvas {
+    height: auto;
+    aspect-ratio: 9 / 11;
   }
 }
 
 @media (max-width: 560px) {
   .app-shell {
-    width: min(100% - 20px, 1320px);
+    width: min(100% - 20px, 1500px);
     padding: 14px 0 18px;
   }
 
