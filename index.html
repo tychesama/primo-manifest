@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="primo.joemidpan.com is a fan-made wish ritual for playful luck readings and shareable anime-style portraits."
+    />
+    <title>primo.joemidpan.com</title>
+    <link
+      rel="icon"
+      href='data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"%3E%3Cdefs%3E%3ClinearGradient id="g" x1="12" y1="8" x2="52" y2="58" gradientUnits="userSpaceOnUse"%3E%3Cstop stop-color="%2378f1ff"/%3E%3Cstop offset=".5" stop-color="%23ffd66b"/%3E%3Cstop offset="1" stop-color="%23ff7bbd"/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill="%2317133a" d="M0 0h64v64H0z"/%3E%3Cpath fill="url(%23g)" d="M32 5 50 22 32 59 14 22z"/%3E%3Cpath fill="%23fff8e8" fill-opacity=".75" d="M32 5 40 22 32 59 24 22z"/%3E%3Cpath fill="none" stroke="%23fff8e8" stroke-width="3" stroke-linejoin="round" d="M32 5 50 22 32 59 14 22zM14 22h36M24 22l8-17 8 17"/%3E%3C/svg%3E'
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Fan-made wish ritual</p>
+          <div class="title-lockup">
+            <span class="brand-gem hero-gem" aria-hidden="true"></span>
+            <h1 id="page-title">Primo Manifest</h1>
+          </div>
+          <p>
+            Upload a selfie, choose your dream pull, and reveal a magical luck
+            reading with a share-ready anime portrait.
+          </p>
+        </div>
+
+        <div class="fortune-card">
+          <span class="spark spark-one"></span>
+          <span class="spark spark-two"></span>
+          <span class="spark spark-three"></span>
+          <strong id="fortuneTitle">Wish fortune</strong>
+          <span id="fortuneBody">The stars are checking your pity trail.</span>
+        </div>
+      </section>
+
+      <section class="workspace" aria-label="Luck manifesting tool">
+        <form class="controls" id="manifestForm">
+          <label class="upload-zone" for="photoInput">
+            <input id="photoInput" type="file" accept="image/*" />
+            <span class="upload-icon" aria-hidden="true">✦</span>
+            <strong>Upload your photo</strong>
+            <small>PNG, JPG, or WEBP</small>
+          </label>
+
+          <label class="field">
+            <span>Desired character</span>
+            <select id="characterSelect">
+              <option value="furina">Furina</option>
+              <option value="neuvillette">Neuvillette</option>
+              <option value="nahida">Nahida</option>
+              <option value="raiden">Raiden Shogun</option>
+              <option value="zhongli">Zhongli</option>
+              <option value="kazuha">Kaedehara Kazuha</option>
+              <option value="hutao">Hu Tao</option>
+              <option value="wanderer">Wanderer</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Wish energy</span>
+            <input id="wishName" type="text" maxlength="24" placeholder="Traveler name" />
+          </label>
+
+          <label class="field">
+            <span>Ritual mood</span>
+            <input id="ritualMood" type="text" maxlength="28" placeholder="Sleepy, lucky, chaotic..." />
+          </label>
+
+          <button class="primary-button" type="submit">Manifest my pull</button>
+        </form>
+
+        <section class="result-panel" aria-live="polite">
+          <div class="portrait-frame">
+            <canvas id="portraitCanvas" width="900" height="1100" aria-label="Anime-style portrait preview"></canvas>
+            <div class="empty-state" id="emptyState">
+              <span>✧</span>
+              <p>Your anime wish portrait appears here.</p>
+            </div>
+            <div class="loading-state" id="loadingState" hidden>
+              <span class="loading-gem" aria-hidden="true"></span>
+              <p>Reading your wish light...</p>
+            </div>
+          </div>
+
+          <article class="reading-card">
+            <p class="reading-kicker" id="readingKicker">Awaiting your omen</p>
+            <h2 id="readingTitle">Choose a character to begin</h2>
+            <p id="readingBody">
+              The stars are quiet. Add your photo and tap manifest to reveal
+              your personalized luck reading.
+            </p>
+            <div class="probability">
+              <span>Wish probability</span>
+              <strong id="probabilityValue">--%</strong>
+            </div>
+            <button class="ghost-button" id="downloadButton" type="button" disabled>
+              Save portrait
+            </button>
+          </article>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
