@@ -226,9 +226,9 @@ h1 {
 }
 
 .controls {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 12px;
-  align-content: start;
   align-self: stretch;
   padding: 14px;
   position: sticky;
@@ -239,11 +239,9 @@ h1 {
 
 .controls::after {
   content: "Lucky ritual ready";
-  align-self: end;
   display: grid;
   place-items: center;
   min-height: 84px;
-  margin-top: auto;
   color: rgba(255, 248, 232, 0.78);
   font-size: 0.78rem;
   font-weight: 900;
@@ -260,7 +258,7 @@ h1 {
   display: grid;
   place-items: center;
   gap: 6px;
-  min-height: 148px;
+  min-height: 220px;
   padding: 12px;
   text-align: center;
   border: 1px dashed rgba(255, 214, 107, 0.62);
@@ -270,6 +268,7 @@ h1 {
     rgba(255, 214, 107, 0.08);
   cursor: pointer;
   transition: border-color 160ms ease, transform 160ms ease, background 160ms ease;
+  flex: 1;
 }
 
 .upload-zone input {

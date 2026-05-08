@@ -181,6 +181,7 @@ function drawPortrait() {
 
   if (uploadedImage) {
     drawSoftPortrait(uploadedImage, character);
+    drawReferenceDecor();
     drawMagicOverlay(character);
     drawCaption(character);
   }
@@ -218,7 +219,6 @@ function drawBackground(character) {
   }
   ctx.globalAlpha = 1;
 
-  drawReferenceDecor();
 }
 
 function drawSoftPortrait(image, character) {
