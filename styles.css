@@ -60,7 +60,7 @@ select {
 }
 
 .app-shell {
-  width: min(1180px, calc(100% - 32px));
+  width: min(1320px, calc(100% - 32px));
   margin: 0 auto;
 }
 
@@ -204,8 +204,8 @@ h1 {
 
 .workspace {
   display: grid;
-  grid-template-columns: 280px 802px;
-  gap: 22px;
+  grid-template-columns: 318px 904px;
+  gap: 24px;
   align-items: stretch;
   justify-content: center;
   flex: 0 0 auto;
@@ -366,8 +366,8 @@ option {
 
 .result-panel {
   display: grid;
-  grid-template-columns: 390px 390px;
-  gap: 22px;
+  grid-template-columns: 440px 440px;
+  gap: 24px;
   align-items: stretch;
   min-height: 0;
 }
@@ -376,7 +376,7 @@ option {
   position: relative;
   overflow: hidden;
   aspect-ratio: 9 / 11;
-  width: 390px;
+  width: 440px;
   background:
     linear-gradient(135deg, rgba(120, 241, 255, 0.2), transparent 40%),
     linear-gradient(315deg, rgba(255, 123, 189, 0.2), transparent 44%),
@@ -509,7 +509,7 @@ canvas {
 
   .portrait-frame {
     justify-self: center;
-    max-width: 390px;
+    max-width: 440px;
     min-height: 0;
   }
 
@@ -521,15 +521,15 @@ canvas {
 
 @media (max-width: 1160px) and (min-width: 921px) {
   .workspace {
-    grid-template-columns: 260px 682px;
+    grid-template-columns: 280px 742px;
   }
 
   .result-panel {
-    grid-template-columns: 330px 330px;
+    grid-template-columns: 360px 360px;
   }
 
   .portrait-frame {
-    width: 330px;
+    width: 360px;
   }
 }
 
@@ -552,7 +552,7 @@ canvas {
 
 @media (max-width: 560px) {
   .app-shell {
-    width: min(100% - 20px, 1180px);
+    width: min(100% - 20px, 1320px);
     padding: 14px 0 18px;
   }
 
