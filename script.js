@@ -222,16 +222,16 @@ function drawBackground(character) {
 }
 
 function drawSoftPortrait(image, character) {
-  const frameW = 716;
-  const frameH = 820;
-  const frameX = 92;
-  const frameY = 118;
-  const zoom = 1.22;
+  const frameW = 784;
+  const frameH = 984;
+  const frameX = 58;
+  const frameY = 72;
+  const zoom = 1.24;
   const scale = Math.max(frameW / image.width, frameH / image.height) * zoom;
   const sourceW = frameW / scale;
   const sourceH = frameH / scale;
   const sourceX = (image.width - sourceW) / 2;
-  const sourceY = Math.max(0, (image.height - sourceH) * 0.38);
+  const sourceY = Math.max(0, (image.height - sourceH) * 0.34);
 
   ctx.save();
   roundedClip(frameX, frameY, frameW, frameH, 42);
@@ -262,16 +262,16 @@ function drawMagicOverlay(character) {
     drawDiamond(124 + i * 92, 132 + (i % 2) * 30, 8 + (i % 3) * 3);
   }
   ctx.fillStyle = character.colors[0];
-  drawDiamond(114, 900, 10);
+  drawDiamond(104, 980, 10);
   drawDiamond(790, 178, 10);
   ctx.globalAlpha = 1;
 }
 
 function drawCaption(character) {
-  const labelX = 138;
-  const labelY = 762;
-  const labelW = 624;
-  const labelH = 116;
+  const labelX = 114;
+  const labelY = 832;
+  const labelW = 672;
+  const labelH = 112;
 
   ctx.save();
   ctx.shadowColor = "rgba(128, 50, 74, 0.2)";
@@ -292,7 +292,7 @@ function drawCaption(character) {
   ctx.fillStyle = "rgba(143, 101, 112, 0.9)";
   ctx.font = "800 24px Inter, sans-serif";
   ctx.fillText(`${character.element} fortune`, 450, labelY + 78);
-  drawCanvasGem(716, labelY + 78, 24);
+  drawCanvasGem(742, labelY + 78, 24);
 }
 
 function drawReferenceDecor() {

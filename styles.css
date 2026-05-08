@@ -204,10 +204,11 @@ h1 {
 
 .workspace {
   display: grid;
-  grid-template-columns: 300px minmax(0, 1fr);
+  grid-template-columns: 280px 802px;
   gap: 22px;
   align-items: stretch;
-  flex: 1;
+  justify-content: center;
+  flex: 0 0 auto;
   min-height: 0;
 }
 
@@ -257,7 +258,7 @@ h1 {
   display: grid;
   place-items: center;
   gap: 6px;
-  min-height: 116px;
+  min-height: 148px;
   padding: 12px;
   text-align: center;
   border: 1px dashed rgba(255, 214, 107, 0.62);
@@ -365,7 +366,7 @@ option {
 
 .result-panel {
   display: grid;
-  grid-template-columns: minmax(280px, 0.88fr) minmax(280px, 0.72fr);
+  grid-template-columns: 390px 390px;
   gap: 22px;
   align-items: stretch;
   min-height: 0;
@@ -375,6 +376,7 @@ option {
   position: relative;
   overflow: hidden;
   aspect-ratio: 9 / 11;
+  width: 390px;
   background:
     linear-gradient(135deg, rgba(120, 241, 255, 0.2), transparent 40%),
     linear-gradient(315deg, rgba(255, 123, 189, 0.2), transparent 44%),
@@ -384,7 +386,7 @@ option {
 canvas {
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
   aspect-ratio: 9 / 11;
 }
 
@@ -506,18 +508,28 @@ canvas {
   }
 
   .portrait-frame {
-    height: 100%;
     justify-self: center;
-    max-width: 100%;
+    max-width: 390px;
     min-height: 0;
-    width: auto;
   }
 
   .controls,
-  .result-panel,
-  .portrait-frame,
   .reading-card {
     height: 100%;
+  }
+}
+
+@media (max-width: 1160px) and (min-width: 921px) {
+  .workspace {
+    grid-template-columns: 260px 682px;
+  }
+
+  .result-panel {
+    grid-template-columns: 330px 330px;
+  }
+
+  .portrait-frame {
+    width: 330px;
   }
 }
 
@@ -530,6 +542,11 @@ canvas {
 
   .controls {
     position: static;
+  }
+
+  .portrait-frame {
+    width: min(100%, 390px);
+    justify-self: center;
   }
 }
 
